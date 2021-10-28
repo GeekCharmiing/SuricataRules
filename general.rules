@@ -1,1 +1,1 @@
-alert tcp $HOME_NET [137,138,139,445] -> $EXTERNAL_NET any (msg:"Unusual number of SMB connect attempts - Outbound"; app-layer-protocol:smb; threshold: type threshold, track by_src, count 50, seconds 60;)
+alert tcp $HOME_NET [137,138,139,445] -> $EXTERNAL_NET any (msg:"Unusual number of SMB connect attempts - Outbound"; app-layer-protocol:smb; threshold: type threshold, track by_src, count 10, seconds 1;)
